@@ -1,19 +1,22 @@
 # ePicklePass
 
-Simple decrypt/encrypt password database in encrypted pickle which authenticates via key loaded in ssh-agent.
+Simple decrypt/encrypt password database in encrypted json which authenticates via key loaded in ssh-agent.
 
 # Requirements
 * python3
 *	paramiko - for SSH key authentication
+*	cryptography - for cryptography
 
 # Usage
 
-Edit config.ini (TODO)
-	Enter path to the personal ssh-key
-	Change filenames of the fingerprint and passwords db if you wish
+Run the script with some ssh key in ssh-agent loaded:
 
-Run it
-Firt time setup - enter password for the ssh-key
+3 modes:
+* --init|-i:
+	* For first time setup only, requires path to some public ssh-key
 
-If you have the ssh key loaded in ssh-agent it will let you continue
-rest is TODO
+* --write|-w:
+	* requires the key to save the password under
+
+* --read|-r:
+	* requires the key to read from passwords
