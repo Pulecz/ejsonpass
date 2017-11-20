@@ -1,4 +1,4 @@
-# ePicklePass
+# eJSONPass
 
 Simple decrypt/encrypt password database in encrypted json which authenticates via key loaded in ssh-agent.
 
@@ -9,14 +9,9 @@ Simple decrypt/encrypt password database in encrypted json which authenticates v
 
 # Usage
 
-Run the script with some ssh key in ssh-agent loaded:
+Run the script with some ssh key in ssh-agent loaded (ssh-add):
+On first run provide path to parameter after flag -k, this key will be needed to access the DB.
 
-3 modes:
-* --init|-i:
-	* For first time setup only, requires path to some public ssh-key
+During first run you can also provide -w and key of the first password.
 
-* --write|-w:
-	* requires the key to save the password under
-
-* --read|-r:
-	* requires the key to read from passwords
+Then use -r and -w KEY with the ssh-agent in shell loaded.
